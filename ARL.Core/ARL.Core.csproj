@@ -6,13 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Models\Core\World\" />
-    <Folder Include="Models\Entity\" />
-    <Folder Include="Services\" />
-    <Folder Include="Exceptions\" />
-    <Folder Include="Enums\" />
-    <Folder Include="Interfaces\" />
-  </ItemGroup>
-
 </Project>
