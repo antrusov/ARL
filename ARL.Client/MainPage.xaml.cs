@@ -1,5 +1,5 @@
 ﻿using ARL.Logic.Settings;
-using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 
 namespace ARL.Client;
 
@@ -8,11 +8,11 @@ public partial class MainPage : ContentPage
     private readonly GameSettings _gameSettings;
     int count = 0;
 
-	public MainPage(IConfiguration _config)
+	public MainPage(IOptions<GameSettings> gameSettings)
 	{
 		InitializeComponent();
 
-		_gameSettings = _config.GetSection("GameSettings").Get<GameSettings>();
+		_gameSettings = gameSettings.Value;
     }
 
 	private void OnCounterClicked(object sender, EventArgs e)

@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using ARL.Logic.Settings;
+using Microsoft.Extensions.Configuration;
 using System.Reflection;
 
 namespace ARL.Client;
@@ -22,8 +23,11 @@ public static class MauiProgram
         var config = new ConfigurationBuilder().AddJsonStream(stream).Build();
         builder.Configuration.AddConfiguration(config);
 
-		//services
-		builder.Services.AddTransient<MainPage>();
+        //add configuration options
+        builder.Services.Configure<GameSettings>(config.GetSection(nameof(GameSettings)));
+
+        //services
+        builder.Services.AddTransient<MainPage>();
 
         return builder.Build();
 	}
