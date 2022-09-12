@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace ARL.Logic.Services;
 
+//см. https://docs.microsoft.com/ru-ru/dotnet/standard/serialization/system-text-json-how-to?pivots=dotnet-6-0
 public class WorldViaJsonFileService : IWorldService
 {
     public World World { get; set; }
