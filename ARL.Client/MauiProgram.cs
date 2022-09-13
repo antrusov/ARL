@@ -1,4 +1,6 @@
-﻿using ARL.Logic.Settings;
+﻿using ARL.Logic.Interfaces;
+using ARL.Logic.Services;
+using ARL.Logic.Settings;
 using Microsoft.Extensions.Configuration;
 using System.Reflection;
 
@@ -25,6 +27,7 @@ public static class MauiProgram
 
         //add configuration options
         builder.Services.Configure<GameSettings>(config.GetSection(nameof(GameSettings)));
+		builder.Services.AddSingleton<IWorldService, WorldViaJsonFileService>();
 
         //services
         builder.Services.AddTransient<MainPage>();

@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ARL.Core", "ARL.Core\ARL.Co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ARL.Logic", "ARL.Logic\ARL.Logic.csproj", "{61D25451-036C-4C52-857D-F7375227DE05}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ARL.Con", "ARL.Con\ARL.Con.csproj", "{407BB078-057D-4B8E-99C1-6FAA7927BD4E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,6 +30,10 @@ Global
 		{61D25451-036C-4C52-857D-F7375227DE05}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61D25451-036C-4C52-857D-F7375227DE05}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61D25451-036C-4C52-857D-F7375227DE05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{407BB078-057D-4B8E-99C1-6FAA7927BD4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{407BB078-057D-4B8E-99C1-6FAA7927BD4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{407BB078-057D-4B8E-99C1-6FAA7927BD4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{407BB078-057D-4B8E-99C1-6FAA7927BD4E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
