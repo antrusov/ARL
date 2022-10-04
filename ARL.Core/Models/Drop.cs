@@ -13,5 +13,5 @@ public class Drop
     public int Start { get; set; }
     public int Interval { get; set; }
 
-    public int Getvalue() => Start + rnd.Next(Interval + 1);
+    public int GetValue() => Start + rnd.Next(Interval + 1);
 }

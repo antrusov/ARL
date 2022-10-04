@@ -28,6 +28,8 @@ public class WorldViaJsonFileService : IWorldService
     {
         string jsonString = File.ReadAllText(_gameSettings.GameDefinitionJsonFile);
         World = JsonSerializer.Deserialize<World>(jsonString)!;
+
+        
     }
 
     public async Task SaveAsync()

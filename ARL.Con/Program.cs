@@ -3,6 +3,7 @@ using Microsoft.Extensions.Hosting;
 using ARL.Logic.Settings;
 using ARL.Logic.Interfaces;
 using ARL.Logic.Services;
+using ARL.Core.Models;
 using ARL.Core.Models.Hero;
 using ARL.Core.Models.Shop;
 using ARL.Core.Models.World;
@@ -18,25 +19,44 @@ using IHost host = Host
     .Build();
 
 var _worldService = host.Services.GetService<IWorldService>();
+await TestSave(_worldService);
+await TestLoad(_worldService);
 
-_worldService.World = new World();
-_worldService.World.Hero = new Hero()
+static async Task TestSave(IWorldService svc)
 {
-    HP = 100,
-    Equipment = new List<ShopItem>()
+    svc.World = new World();
+    svc.World.Hero = new Hero()
     {
-        new ShopArmor()
+        HP = 100,
+        Equipment = new List<ShopItem>()
         {
-            Cost = 10,
-            Defence = 5,
-            Protection = 2,
-            Name = "Щит",
-            Description = "Простой деревянный щит",
-            Slot = ArmorSlot.Sheld
+            new ShopArmor()
+            {
+                Cost = 10,
+                Defence = 5,
+                Protection = 2,
+                Name = "Щит",
+                Description = "Простой деревянный щит",
+                Slot = ArmorSlot.Sheld,
+            },
+            new ShopWeapon()
+            {
+                Cost = 12,
+                Attack = 1,
+                Damage = new Dice(1,6),
+                Name = "Деревянная палица",
+                Description = "Простая деревянная палица",
+            }
         }
-    }
-};
+    };
 
-_worldService.SaveAsync();
+    await svc.SaveAsync();
+}
+
+static async Task TestLoad(IWorldService svc)
+{
+    await svc.LoadAsync();
+    Console.Write(svc.World.ToString());
+}
 
 //await host.RunAsync();
