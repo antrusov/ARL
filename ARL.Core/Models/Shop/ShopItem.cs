@@ -10,8 +10,9 @@ using ARL.Core.Interfaces;
 namespace ARL.Core.Models.Shop;
 
 [JsonPolymorphic(TypeDiscriminatorPropertyName = "Type")]
-[JsonDerivedType(typeof(ShopArmor), "Armor")]
-[JsonDerivedType(typeof(ShopWeapon), "Weapon")]
+[JsonDerivedType(typeof(ShopArmor), nameof(ShopArmor))]
+[JsonDerivedType(typeof(ShopWeapon), nameof(ShopWeapon))]
+[JsonDerivedType(typeof(ShopHeal), nameof(ShopHeal))]
 public class ShopItem : IProduct, INameable
 {
     public int Cost { get; set; }

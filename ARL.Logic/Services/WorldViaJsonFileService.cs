@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 namespace ARL.Logic.Services;
 
 //см. https://docs.microsoft.com/ru-ru/dotnet/standard/serialization/system-text-json-how-to?pivots=dotnet-6-0
+//и https://github.com/dotnet/runtime/issues/63747
 public class WorldViaJsonFileService : IWorldService
 {
     private readonly GameSettings _gameSettings;
@@ -26,10 +27,9 @@ public class WorldViaJsonFileService : IWorldService
 
     public async Task LoadAsync()
     {
+        //todo: получить кроссплатформенный путь к файлу (из ресурсов?)
         string jsonString = File.ReadAllText(_gameSettings.GameDefinitionJsonFile);
         World = JsonSerializer.Deserialize<World>(jsonString)!;
-
-        
     }
 
     public async Task SaveAsync()
