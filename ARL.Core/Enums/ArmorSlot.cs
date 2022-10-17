@@ -10,5 +10,5 @@ public enum ArmorSlot
 {
     Head,
     Body,
-    Sheld
+    Siheld
 }

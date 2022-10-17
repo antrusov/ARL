@@ -27,16 +27,12 @@ namespace ARL.Core.Models
         public Dice(int count, int size, int addition = 0) =>
             (DiceCount, DiceSize, Addition) = (count, size, addition);
 
-        [JsonIgnore]
-        public int Next
+        public int Next()
         {
-            get
-            {
-                int res = Addition;
-                for (int i = 0; i < DiceCount; i++)
-                    Addition += rnd.Next(DiceSize) + 1;
-                return res;
-            }
+            int res = Addition;
+            for (int i = 0; i < DiceCount; i++)
+                res += rnd.Next(DiceSize) + 1;
+            return res;
         }
 
         public override string ToString() =>

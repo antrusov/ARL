@@ -37,7 +37,7 @@ static async Task TestSave(IWorldService svc)
                 Protection = 2,
                 Name = "Щит",
                 Description = "Простой деревянный щит",
-                Slot = ArmorSlot.Sheld,
+                Slot = ArmorSlot.Siheld,
             },
             new ShopWeapon()
             {

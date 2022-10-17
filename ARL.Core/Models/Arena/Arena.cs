@@ -10,6 +10,5 @@ namespace ARL.Core.Models.Arena;
 public class Arena
 {
     public List<ArenaEnemy> Enemies { get; set; }
-    [JsonIgnore]
-    public ArenaEnemy CurrentEnemy { get => Enemies.Where(e => !e.Completed).FirstOrDefault(); }
+    public ArenaEnemy CurrentEnemy() => Enemies.Where(e => !e.Completed).FirstOrDefault();
 }

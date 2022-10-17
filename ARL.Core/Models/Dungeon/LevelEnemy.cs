@@ -8,7 +8,7 @@ using ARL.Core.Interfaces;
 
 namespace ARL.Core.Models.Dungeon
 {
-    public class LevelEnemy : Event, IFighter
+    public class LevelEnemy : Event, IFighter, INameable
     {
         public int HP { get; set; }
 
