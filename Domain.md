@@ -1,8 +1,6 @@
 ```mermaid
 classDiagram
 
-    direction LR
-
     %%%%%%%%%%
     %% misc %%
     %%%%%%%%%%
@@ -243,6 +241,55 @@ classDiagram
     RoadTrash --|> Event
 
     RoadTreasur --|> Event
+
+    %%%%%%%%%%%%%%%%%
+    %% composition %%
+    %%%%%%%%%%%%%%%%%
+
+    Dice "1" --* "1" ArenaEnemy
+    Dice "1" --* "1" LevelEnemy
+    Dice "1" --* "1" Hero
+    Dice "1" --* "1" ShopWeapon
+    Dice "1" --* "1" RoadEnemy
+
+    Drop "1" --* "1" LevelEnemy
+    Drop "1" --* "1" LevelTreasure
+    Drop "1" --* "1" RoadEnemy
+    Drop "1" --* "1" RoadTreasure
+
+    ShopArmor "1" --* "*" Hero
+    ShopHeal "1" --* "*" Hero
+    ShopWeapon "1" --* "*" Hero
+
+    ShopArmor "1" --* "*" Shop
+    ShopHeal "1" --* "*" Shop
+    ShopWeapon "1" --* "*" Shop
+
+    LevelEnemy "1" --* "*" Level
+    LevelExit "1" --* "*" Level
+    LevelLadder "1" --* "*" Level
+    LevelTrash "1" --* "*" Level
+    LevelTreasure "1" --* "*" Level
+
+    EnemyKind "1" --* "1" LevelEnemy
+
+    ArmorSlot "1" --* "1" ShopArmor
+
+    ArenaEnemy "1" --* "*" Arena
+
+    Level "1" --* "*" Dungeon
+
+    Arena "1" --* "1" Town
+    Shop "1" --* "1" Town
+    Dungeon "1" --* "1" Town
+
+    Hero "1" --* "1" World
+    Town "1" --* "*" World
+    Road "1" --* "*" World
+
+    RoadEnemy "1" --* "*" Road
+    RoadTrash "1" --* "*" Road
+    RoadTreasure "1" --* "*" Road
 
     %%%%%%%%%%%%%%%%
     %% interfaces %%
