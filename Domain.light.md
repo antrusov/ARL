@@ -193,53 +193,20 @@ classDiagram
         +Message : string
     }
 
-    %%%%%%%%%%%
-    %% links %%
-    %%%%%%%%%%%
-
-    Event ..|> IEvent
-    Event ..|> INameable
-
-    ArenaEnemy ..|> IFighter
-    ArenaEnemy ..|> INameable
-
-    Dungeon ..|> INameable
-    Level ..|> IWithId~string~
-    Level ..|> INameable
+    %%%%%%%%%%%%%
+    %% derived %%
+    %%%%%%%%%%%%%
 
     LevelEnemy --|> Event
-    LevelEnemy ..|> IFighter
-    LevelEnemy ..|> INameable
-
     LevelExit --|> Event
-
     LevelLadder --|> Event
-
     LevelTrash --|> Event
-
     LevelTreasure --|> Event
-
-    Hero ..|> IFighter
-
-    ShopItem ..|> IProduct
-    ShopItem ..|> INameable
-
     ShopArmor --|> ShopItem
-    ShopArmor ..|> IArmor
-
     ShopHeal --|> ShopItem
-
     ShopWeapon --|> ShopItem
-    ShopWeapon ..|> IWeapon
-
-    Town ..|> INameable
-    Town ..|> IWithId~string~
-
     RoadEnemy --|> Event
-    RoadEnemy ..|> IFighter
-
     RoadTrash --|> Event
-
     RoadTreasur --|> Event
 
     %%%%%%%%%%%%%%%%%
@@ -290,52 +257,6 @@ classDiagram
     RoadEnemy "1" --* "*" Road
     RoadTrash "1" --* "*" Road
     RoadTreasure "1" --* "*" Road
-
-    %%%%%%%%%%%%%%%%
-    %% interfaces %%
-    %%%%%%%%%%%%%%%%
-
-    class IWithId~T~ {
-        +Id : T
-    }
-
-    class IEvent {
-        <<interface>>
-        +Probability : int
-    }
-
-    class IProduct {
-        <<interface>>
-        +Cost : int
-    }
-
-    class INameable {
-        <<interface>>
-        +Name : string
-        +Description : string
-    }
-
-    class IWeapon {
-        <<interface>>
-        +Attack : int
-        +Damage : Dice
-    }
-
-    class IArmor {
-        <<interface>>
-        +Defence : int
-        +Protection : int
-        +Slot : ArmorSlot
-    }
-
-    class IFighter {
-        <<interface>>
-        +HP : int
-        +Damage : Dice
-        +Attack : int
-        +Defence : int
-        +Protection : int
-    }
 
     %%%%%%%%%%%
     %% enums %%
