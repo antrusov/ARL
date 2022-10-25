@@ -16,5 +16,5 @@ public class Town : INameable, IWithId<string>
 
     public Arena.Arena Arena { get; set; }
     public Shop.Shop Shop { get; set; }
-    public List<Dungeon.Dungeon> Dungeons { get; set; }
+    public List<Dungeon.Dungeon> Dungeons { get; set; } = new List<Dungeon.Dungeon>();
 }

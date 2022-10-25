@@ -9,6 +9,6 @@ namespace ARL.Core.Models.Arena;
 
 public class Arena
 {
-    public List<ArenaEnemy> Enemies { get; set; }
+    public List<ArenaEnemy> Enemies { get; set; } = new List<ArenaEnemy>();
     public ArenaEnemy CurrentEnemy() => Enemies.Where(e => !e.Completed).FirstOrDefault();
 }

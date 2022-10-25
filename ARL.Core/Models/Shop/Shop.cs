@@ -8,5 +8,5 @@ namespace ARL.Core.Models.Shop;
 
 public class Shop
 {
-    public List<ShopItem> Items { get; set; }
+    public List<ShopItem> Items { get; set; } = new List<ShopItem>();
 }

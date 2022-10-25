@@ -14,5 +14,5 @@ public class Dungeon : INameable
     public bool BossKilled { get; set; }
     public string CurrentLevelId { get; set; }
 
-    public Dictionary<string, Level> Levels { get; set; }
+    public Dictionary<string, Level> Levels { get; set; } = new Dictionary<string, Level>();
 }

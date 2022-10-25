@@ -8,6 +8,8 @@ using ARL.Core.Models.Hero;
 using ARL.Core.Models.Shop;
 using ARL.Core.Models.World;
 using ARL.Core.Enums;
+using ARL.Con.Builder;
+using ARL.Con.Worlds;
 
 using IHost host = Host
     .CreateDefaultBuilder(args)
@@ -24,6 +26,9 @@ await TestLoad(_worldService);
 
 static async Task TestSave(IWorldService svc)
 {
+    //->
+    svc.World = SimpleWorld.Create();
+    /*
     svc.World = new World();
     svc.World.Hero = new Hero()
     {
@@ -49,6 +54,8 @@ static async Task TestSave(IWorldService svc)
             }
         }
     };
+    */
+    //-<
 
     await svc.SaveAsync();
 }

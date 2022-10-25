@@ -15,6 +15,6 @@ public class Level : INameable, IWithId<string>
     public string Name { get; set; }
     public string Description { get; set; }
 
-    public List<Event> Events { get; set; }
+    public List<Event> Events { get; set; } = new List<Event>();
     public Event GetNextEvent() => Events.First(); //TODO: генерация события на основании вероятности
 }

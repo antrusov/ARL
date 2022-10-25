@@ -10,5 +10,5 @@ public class Road
 {
     public int SafeTravelCost { get; set; } //стоимость безопасного путешествия (с караваном)
     public int Days { get; set; }
-    public List<Event> Events { get; set; }
+    public List<Event> Events { get; set; } = new List<Event>();
 }

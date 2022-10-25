@@ -10,12 +10,12 @@ namespace ARL.Core.Models.World
     {
         public Hero.Hero Hero { get; set; }
 
-        public bool FinalBossKilled { get; set; }
+        public bool FinalBossKilled { get; set; } = false;
 
         public string CurrentTownId { get; set; }
-        public Dictionary<string, Town.Town> Towns{ get; set; }
+        public Dictionary<string, Town.Town> Towns { get; set; } = new Dictionary<string, Town.Town>();
 
-        public Dictionary<(string fromTownId, string toTownId), Road> Roads { get; set; }
+        public Dictionary<(string fromTownId, string toTownId), Road> Roads { get; set; } = new Dictionary<(string fromTownId, string toTownId), Road>();
 
         //TODO: статистика (время, очки, общий урон, кол-во убийство, получено денег)
     }

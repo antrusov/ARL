@@ -19,7 +19,5 @@ public class RoadEnemy : Event, IFighter
 
     public int Protection { get; set; }
 
-    public int Probability { get; set; }
-
     public Drop Treasure { get; set; }
 }

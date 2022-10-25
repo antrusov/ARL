@@ -13,7 +13,7 @@ namespace ARL.Core.Models.Hero;
 public class Hero: IFighter
 {
     public int Money { get; set; }
-    public List<ShopItem> Equipment { get; set; }
+    public List<ShopItem> Equipment { get; set; } = new List<ShopItem>();
 
     public int MaxHP { get; set; }
     public int HP { get; set; }
